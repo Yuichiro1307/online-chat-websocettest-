@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Chat（Websocet TESTING）</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="container">
+
+  <!-- ルーム一覧 -->
+  <div id="rooms">
+    <h2>ルーム</h2>
+
+    <input id="roomSearch" placeholder="ルーム検索" oninput="filterRooms()">
+
+    <div id="roomList"></div>
+
+    <input id="newRoomInput" placeholder="新しいルーム名">
+    <button onclick="createRoom()">作成</button>
+  </div>
+
+  <!-- チャット画面 -->
+  <div id="chat">
+    <div id="roomTitle">ルーム：general</div>
+    <div id="log"></div>
+
+    <div id="inputArea">
+      <input id="name" placeholder="名前" readonly>
+      <input id="msg" placeholder="メッセージ">
+
+      <label id="imgLabel" for="imgInput">📷</label>
+      <input id="imgInput" type="file" accept="image/*" onchange="handleImageUpload(event)">
+
+      <button id="sendBtn" onclick="send()">送信</button>
+    </div>
+  </div>
+</div>
+<div id="namePopup">
+  <div id="namePopupBox">
+    <h3>ニックネームを入力</h3>
+    <input id="popupNameInput" placeholder="ニックネーム">
+    <button onclick="enterRoom()">入室</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
